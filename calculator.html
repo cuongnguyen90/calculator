@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<style>
+		body{
+			font-style: 15px
+		}
+		#display{
+			width: 90%;
+			height: 50px;
+			margin-top: 25px;
+			border: 1px #CCC solid;
+			border-radius: 2%;
+		}
+	
+		input[type=button]{
+			 background-color: #FFF;
+			  border: 1px #CCC solid;
+			  border-radius: 20%;
+			  color: #000;
+			  padding: 20px 24px;
+			  text-decoration: none;
+			  margin: 4px 4px;
+			  cursor: pointer;
+
+		}
+		table{
+			margin: auto;
+			margin-top:20px 
+		}
+	</style>
+		
+		
+</head>
+<body>
+	<div class="center" style="text-align: center;width: 320px;height:450px;margin: auto;border: 1px #CCC solid;border-radius: 2%">
+		<div class="main">
+			<div class="brand">CASIO</div>
+			<div class="display">
+				<input type="number" id="display" disabled="disabled">
+			</div>
+			<div class="board">
+				<table>
+					<tr>
+						<td><input type="button"  name="" value="("></td>
+						<td><input type="button"  name="" value=")"></td>
+						<td><input type="button"  name="" value="%"></td>
+						<td><input type="button"  name="" value="C"></td>
+						
+					</tr>
+					<tr>
+						<td><input type="button"  name="" value="7"></td>
+						<td><input type="button"  name="" value="8"></td>
+						<td><input type="button"  name="" value="9"></td>
+						<td><input type="button"  name="" value="/"></td>
+						
+					</tr>
+					<tr>
+						<td><input type="button"  name="" value="4"></td>
+						<td><input type="button"  name="" value="5"></td>
+						<td><input type="button"  name="" value="6"></td>
+						<td><input type="button"  name="" value="x"></td>
+						
+					</tr>
+					<tr>
+						<td><input type="button"  name="" value="1"></td>
+						<td><input type="button"  name="" value="2"></td>
+						<td><input type="button"  name="" value="3"></td>
+						<td><input type="button"  name="" value="-"></td>
+						
+					</tr>
+					<tr>
+						<td><input type="button"  name="" value="0"></td>
+						<td><input type="button"  name="" value="."></td>
+						<td><input type="button" style="background-color:#4285f4" name="" value="="></td>
+						<td><input type="button"  name="" value="+"></td>
+						
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
