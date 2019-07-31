@@ -18,10 +18,10 @@
 				<input type="text" id="a" >
 				<input type="text" id="b" >
 				<br/>
-				<button onClick="Add()">Addition(+)</button>
-				<button onClick="Sub()">Subtraction(-)</button>
-				<button onClick="Multi()">Multiplication(*)</button>
-				<button onClick="Divi()">Division(/)</button>
+				<button onClick="Add(document.getElementById('a').value,document.getElementById('b').value)">Addition(+)</button>
+				<button onClick="Sub(document.getElementById('a').value,document.getElementById('b').value)">Subtraction(-)</button>
+				<button onClick="Multi(document.getElementById('a').value,document.getElementById('b').value)">Multiplication(*)</button>
+				<button onClick="Divi(document.getElementById('a').value,document.getElementById('b').value)">Division(/)</button>
 				<br/>
 				<p id="result"></p>
 			</div>
@@ -29,35 +29,30 @@
 		</div>
 	</div>
 	<script>
+
+
+			
 		
 
-		function Add(){
-			_a = document.getElementById('a').value,
-			_b = document.getElementById('b').value,
+		function Add(_a,_b){
 			a = parseInt(_a),
-			b = parseInt(_b),
+			b = parseInt(_b)
 			result = a + b
 			document.getElementById('result').innerHTML = "Kết quả là: "+result
 		}
-		function Sub(){
-			_a = document.getElementById('a').value,
-			_b = document.getElementById('b').value,
+		function Sub(_a,_b){
 			a = parseInt(_a),
 			b = parseInt(_b),
 			result = a - b
 			document.getElementById('result').innerHTML = "Kết quả là: "+result
 		}
-		function Multi(){
-			_a = document.getElementById('a').value,
-			_b = document.getElementById('b').value,
+		function Multi(_a,_b){
 			a = parseInt(_a),
 			b = parseInt(_b),
 			result = a * b
 			document.getElementById('result').innerHTML = "Kết quả là: "+result
 		}
-		function Divi(){
-			_a = document.getElementById('a').value,
-			_b = document.getElementById('b').value,
+		function Divi(_a,_b){
 			a = parseInt(_a),
 			b = parseInt(_b),
 			result = a / b
