@@ -15,8 +15,8 @@
 	<div class="center" style="text-align: center">
 		<div class="main">
 			<div id="display">
-				<input type="text" id="a" >
-				<input type="text" id="b" >
+				<input type="number" id="a" >
+				<input type="number" id="b" >
 				<br/>
 				<button onClick="Add(document.getElementById('a').value,document.getElementById('b').value)">Addition(+)</button>
 				<button onClick="Sub(document.getElementById('a').value,document.getElementById('b').value)">Subtraction(-)</button>
@@ -34,27 +34,21 @@
 			
 		
 
-		function Add(_a,_b){
-			a = parseInt(_a),
-			b = parseInt(_b)
+		function Add(a,b){
+			a = parseInt(a),
+			b = parseInt(b)
 			result = a + b
 			document.getElementById('result').innerHTML = "Kết quả là: "+result
 		}
-		function Sub(_a,_b){
-			a = parseInt(_a),
-			b = parseInt(_b),
+		function Sub(a,b){
 			result = a - b
 			document.getElementById('result').innerHTML = "Kết quả là: "+result
 		}
-		function Multi(_a,_b){
-			a = parseInt(_a),
-			b = parseInt(_b),
+		function Multi(a,b){
 			result = a * b
 			document.getElementById('result').innerHTML = "Kết quả là: "+result
 		}
-		function Divi(_a,_b){
-			a = parseInt(_a),
-			b = parseInt(_b),
+		function Divi(a,b){
 			result = a / b
 			document.getElementById('result').innerHTML = "Kết quả là: "+result
 		}
