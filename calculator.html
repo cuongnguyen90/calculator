@@ -13,6 +13,9 @@
 			margin-top: 25px;
 			border: 1px #CCC solid;
 			border-radius: 2%;
+			font-size: 16px;
+			text-align: right;
+			padding-right: 10px;
 		}
 	
 		input[type=button]{
@@ -20,10 +23,13 @@
 			  border: 1px #CCC solid;
 			  border-radius: 20%;
 			  color: #000;
+			  font-size: 18px;
 			  padding: 20px 24px;
 			  text-decoration: none;
 			  margin: 4px 4px;
 			  cursor: pointer;
+			  width: 65px;
+
 
 		}
 		table{
@@ -35,53 +41,69 @@
 		
 </head>
 <body>
-	<div class="center" style="text-align: center;width: 320px;height:450px;margin: auto;border: 1px #CCC solid;border-radius: 2%">
+	<div class="center" style="text-align: center;width: 350px;height:550px;margin: auto;border: 1px #CCC solid;border-radius: 2%">
 		<div class="main">
-			<div class="brand">CASIO</div>
+			<div class="brand" style="font-family: 'Apple LiGothic';margin-top: 20px;letter-spacing: 4px">CASIO</div>
 			<div class="display">
-				<input type="number" id="display" disabled="disabled">
+				<input type="text" id="display" value="0" disabled>
 			</div>
 			<div class="board">
 				<table>
 					<tr>
-						<td><input type="button"  name="" value="("></td>
-						<td><input type="button"  name="" value=")"></td>
-						<td><input type="button"  name="" value="%"></td>
-						<td><input type="button"  name="" value="C"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="("></td>
+						<td><input type="button" onclick="getValue(this.value)" value=")"></td>
+						<td><input type="button"  value="%"></td>
+						<td><input type="button" onClick="clearDisplay()" value="C"></td>
+
+					</tr>
+					<tr>
+						<td><input type="button" onclick="getValue(this.value)" value="7"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="8"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="9"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="/"></td>
 						
 					</tr>
 					<tr>
-						<td><input type="button"  name="" value="7"></td>
-						<td><input type="button"  name="" value="8"></td>
-						<td><input type="button"  name="" value="9"></td>
-						<td><input type="button"  name="" value="/"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="4"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="5"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="6"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="*"></td>
 						
 					</tr>
 					<tr>
-						<td><input type="button"  name="" value="4"></td>
-						<td><input type="button"  name="" value="5"></td>
-						<td><input type="button"  name="" value="6"></td>
-						<td><input type="button"  name="" value="x"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="1"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="2"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="3"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="-"></td>
 						
 					</tr>
 					<tr>
-						<td><input type="button"  name="" value="1"></td>
-						<td><input type="button"  name="" value="2"></td>
-						<td><input type="button"  name="" value="3"></td>
-						<td><input type="button"  name="" value="-"></td>
-						
-					</tr>
-					<tr>
-						<td><input type="button"  name="" value="0"></td>
-						<td><input type="button"  name="" value="."></td>
-						<td><input type="button" style="background-color:#4285f4" name="" value="="></td>
-						<td><input type="button"  name="" value="+"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="0"></td>
+						<td><input type="button" onclick="getValue(this.value)" value="."></td>
+						<td><input type="button" style="background-color:#4285f4"  onclick="Equal()" name="" value="="></td>
+						<td><input type="button" onclick="getValue(this.value)" value="+"></td>
 						
 					</tr>
 				</table>
-
 			</div>
 		</div>
 	</div>
+	<div id="display2"></div>
+	<script>
+		function getValue(a){ // Thêm số vào màn hình
+			if (document.getElementById("display").value == 0){
+				document.getElementById("display").value = a
+			}else
+				//document.getElementById('check').value = 0
+			 document.getElementById("display").value = document.getElementById("display").value + a;
+		}
+		function clearDisplay(){ // Clear man hinh
+
+			document.getElementById("display").value = 0
+		}
+		function Equal(){
+			document.getElementById("display").value = eval(document.getElementById("display").value)
+		}
+	</script>
 </body>
 </html>
