@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<style>
+		.main{
+			width: 400px;
+			height: 500px;
+			background-color: #CCC
+		}
+	</style>
+</head>
+<body>
+	<div class="center" style="text-align: center">
+		<div class="main">
+			<div id="display">
+				<input type="text" id="a" >
+				<input type="text" id="b" >
+				<br/>
+				<button onClick="Add()">Addition(+)</button>
+				<button onClick="Sub()">Subtraction(-)</button>
+				<button onClick="Multi()">Multiplication(*)</button>
+				<button onClick="Divi()">Division(/)</button>
+				<br/>
+				<p id="result"></p>
+			</div>
+			<div id="board"></div>
+		</div>
+	</div>
+	<script>
+		
+
+		function Add(){
+			_a = document.getElementById('a').value,
+			_b = document.getElementById('b').value,
+			a = parseInt(_a),
+			b = parseInt(_b),
+			result = a + b
+			document.getElementById('result').innerHTML = "Kết quả là: "+result
+		}
+		function Sub(){
+			_a = document.getElementById('a').value,
+			_b = document.getElementById('b').value,
+			a = parseInt(_a),
+			b = parseInt(_b),
+			result = a - b
+			document.getElementById('result').innerHTML = "Kết quả là: "+result
+		}
+		function Multi(){
+			_a = document.getElementById('a').value,
+			_b = document.getElementById('b').value,
+			a = parseInt(_a),
+			b = parseInt(_b),
+			result = a * b
+			document.getElementById('result').innerHTML = "Kết quả là: "+result
+		}
+		function Divi(){
+			_a = document.getElementById('a').value,
+			_b = document.getElementById('b').value,
+			a = parseInt(_a),
+			b = parseInt(_b),
+			result = a / b
+			document.getElementById('result').innerHTML = "Kết quả là: "+result
+		}
+	</script>
+
+</body>
+</html>
