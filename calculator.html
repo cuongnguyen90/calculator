@@ -106,7 +106,7 @@
 				//document.getElementById('check').value = 0
 				document.getElementById("display").value = _b + a;
 		}
-		function getValue_btn(a) {
+		function getValue_btn(a) {// Lay phep tinh
 			_b = document.getElementById("display").value;
 			document.getElementById("display").value =  _b + a;
 			document.getElementById("equal").setAttribute("check","false");
@@ -162,6 +162,18 @@
                 case 13:
                     Equal();
                     break;
+				case 56:
+					getValue_btn("*");
+					break;
+				case 191:
+					getValue_btn("/");
+					break;
+				case 53:
+					getValue_btn("%");
+					break;
+				case 8:
+					clearDisplay();
+					break;
 
             }
 
