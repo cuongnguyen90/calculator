@@ -17,7 +17,7 @@
 			text-align: right;
 			padding-right: 10px;
 		}
-	
+
 		input[type=button]{
 			 background-color: #FFF;
 			  border: 1px #CCC solid;
@@ -34,13 +34,13 @@
 		}
 		table{
 			margin: auto;
-			margin-top:20px 
+			margin-top:20px
 		}
 	</style>
-		
-		
+
+
 </head>
-<body>
+<body onload="ready()">
 	<div class="center" style="text-align: center; width: 350px;height:550px;margin: auto;margin-top:40px;border: 1px #CCC solid;border-radius: 2%">
 		<div class="main">
 			<div class="brand" style="font-family: 'Apple LiGothic';margin-top: 20px;letter-spacing: 4px">CASIO</div>
@@ -61,28 +61,28 @@
 						<td><input type="button" onclick="getValue(this.value)" value="8"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="9"></td>
 						<td><input type="button" onclick="getValue_btn(this.value)" value="/"></td>
-						
+
 					</tr>
 					<tr>
 						<td><input type="button" onclick="getValue(this.value)" value="4"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="5"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="6"></td>
 						<td><input type="button" onclick="getValue_btn(this.value)" value="*"></td>
-						
+
 					</tr>
 					<tr>
 						<td><input type="button" onclick="getValue(this.value)" value="1"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="2"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="3"></td>
 						<td><input type="button" onclick="getValue_btn(this.value)" value="-"></td>
-						
+
 					</tr>
 					<tr>
 						<td><input type="button" onclick="getValue(this.value)" value="0"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="."></td>
 						<td><input type="button" id="equal" style="background-color:#FFF"  onclick="Equal()" name="" value="=" check="false"></td>
 						<td><input type="button" onclick="getValue_btn(this.value)" value="+"></td>
-						
+
 					</tr>
 				</table>
 			</div>
@@ -119,6 +119,56 @@
 			document.getElementById("display").value = eval(document.getElementById("display").value);
 			document.getElementById("equal").setAttribute("check","true");
 		}
+		function switchKey(key) {
+            _key = key.keyCode;
+
+            switch(_key){
+                case 49:
+                    getValue(1);
+                    break;
+                case 50:
+                    getValue(2);
+                    break;
+                case 51:
+                    getValue(3);
+                    break;
+                case 52:
+                    getValue(4);
+                    break;
+                case 53:
+                    getValue(5);
+                    break;
+                case 54:
+                    getValue(6);
+                    break;
+                case 55:
+                    getValue(7);
+                    break;
+                case 56:
+                    getValue(8);
+                    break;
+                case 57:
+                    getValue(9);
+                    break;
+                case 48:
+                    getValue(0);
+                    break;
+                case 187:
+                    getValue_btn("+");
+                    break;
+                case 189:
+                    getValue_btn("-");
+                    break;
+                case 13:
+                    Equal();
+                    break;
+
+            }
+
+        }
+        function ready() {
+            document.addEventListener("keydown", switchKey);
+        }
 	</script>
 </body>
 </html>
