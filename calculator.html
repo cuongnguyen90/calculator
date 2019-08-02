@@ -41,7 +41,7 @@
 		
 </head>
 <body>
-	<div class="center" style="text-align: center;width: 350px;height:550px;margin: auto;border: 1px #CCC solid;border-radius: 2%">
+	<div class="center" style="text-align: center; width: 350px;height:550px;margin: auto;margin-top:40px;border: 1px #CCC solid;border-radius: 2%">
 		<div class="main">
 			<div class="brand" style="font-family: 'Apple LiGothic';margin-top: 20px;letter-spacing: 4px">CASIO</div>
 			<div class="display">
@@ -52,7 +52,7 @@
 					<tr>
 						<td><input type="button" onclick="getValue(this.value)" value="("></td>
 						<td><input type="button" onclick="getValue(this.value)" value=")"></td>
-						<td><input type="button"  value="%"></td>
+						<td><input type="button" onclick="getValue_btn(this.value)" value="%"></td>
 						<td><input type="button" onClick="clearDisplay()" value="C"></td>
 
 					</tr>
@@ -60,28 +60,28 @@
 						<td><input type="button" onclick="getValue(this.value)" value="7"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="8"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="9"></td>
-						<td><input type="button" onclick="getValue(this.value)" value="/"></td>
+						<td><input type="button" onclick="getValue_btn(this.value)" value="/"></td>
 						
 					</tr>
 					<tr>
 						<td><input type="button" onclick="getValue(this.value)" value="4"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="5"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="6"></td>
-						<td><input type="button" onclick="getValue(this.value)" value="*"></td>
+						<td><input type="button" onclick="getValue_btn(this.value)" value="*"></td>
 						
 					</tr>
 					<tr>
 						<td><input type="button" onclick="getValue(this.value)" value="1"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="2"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="3"></td>
-						<td><input type="button" onclick="getValue(this.value)" value="-"></td>
+						<td><input type="button" onclick="getValue_btn(this.value)" value="-"></td>
 						
 					</tr>
 					<tr>
 						<td><input type="button" onclick="getValue(this.value)" value="0"></td>
 						<td><input type="button" onclick="getValue(this.value)" value="."></td>
-						<td><input type="button" style="background-color:#4285f4"  onclick="Equal()" name="" value="="></td>
-						<td><input type="button" onclick="getValue(this.value)" value="+"></td>
+						<td><input type="button" id="equal" style="background-color:#FFF"  onclick="Equal()" name="" value="=" check="false"></td>
+						<td><input type="button" onclick="getValue_btn(this.value)" value="+"></td>
 						
 					</tr>
 				</table>
@@ -90,19 +90,34 @@
 	</div>
 	<div id="display2"></div>
 	<script>
+
+
+		//console.log(a);
+
 		function getValue(a){ // Thêm số vào màn hình
-			if (document.getElementById("display").value == 0){
-				document.getElementById("display").value = a
+			// Check dau bang
+			_a = document.getElementById("equal").getAttribute("check");
+			_b = document.getElementById("display").value;
+			//console.log(_b);
+			if (_b == 0|| _a == "true"){
+				document.getElementById("display").value = a;
+				document.getElementById("equal").setAttribute("check","false");
 			}else
 				//document.getElementById('check').value = 0
-			 document.getElementById("display").value = document.getElementById("display").value + a;
+				document.getElementById("display").value = _b + a;
+		}
+		function getValue_btn(a) {
+			_b = document.getElementById("display").value;
+			document.getElementById("display").value =  _b + a;
+			document.getElementById("equal").setAttribute("check","false");
 		}
 		function clearDisplay(){ // Clear man hinh
 
 			document.getElementById("display").value = 0
 		}
 		function Equal(){
-			document.getElementById("display").value = eval(document.getElementById("display").value)
+			document.getElementById("display").value = eval(document.getElementById("display").value);
+			document.getElementById("equal").setAttribute("check","true");
 		}
 	</script>
 </body>
